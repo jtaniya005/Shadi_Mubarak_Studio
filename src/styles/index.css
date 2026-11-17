@@ -1129,11 +1129,14 @@ small { font-size: 0.82rem; }
     padding: 24px 16px;
     border-radius: 18px;
   }
-  .vip-tier-grid {
+  .vip-form-grid {
     grid-template-columns: 1fr !important;
   }
-  .vip-progress-tracker {
-    grid-template-columns: 1fr 1fr !important;
+  .vip-contact-row {
+    flex-direction: column !important;
+  }
+  .vip-contact-row .form-group {
+    width: 100% !important;
   }
 }
 
@@ -1403,135 +1406,7 @@ small { font-size: 0.82rem; }
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
 }
 
-/* 4-Step Royal Progress Tracker */
-.vip-progress-tracker {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin: 16px 0;
-  padding: 12px;
-  background: var(--bg-warm);
-  border-radius: 12px;
-  border: 1px solid var(--line);
-}
-.tracker-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 4px;
-}
-.tracker-step .step-circle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--line);
-  color: var(--mut);
-  font-size: 0.75rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tracker-step span {
-  font-size: 0.68rem;
-  color: var(--mut);
-  font-weight: 600;
-  line-height: 1.2;
-}
-.tracker-step.done .step-circle {
-  background: var(--teal);
-  color: #fff;
-}
-.tracker-step.done span {
-  color: var(--teal);
-}
-.tracker-step.active .step-circle {
-  background: linear-gradient(135deg, var(--gold-rich), #c5861b);
-  color: var(--plum-deep);
-  box-shadow: 0 0 8px rgba(214, 150, 35, 0.5);
-}
-.tracker-step.active span {
-  color: var(--plum-deep);
-  font-weight: 800;
-}
 
-/* Tier Grid in VIP Modal */
-.vip-tier-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.vip-tier-card {
-  position: relative;
-  background: var(--bg-warm);
-  border: 1.5px solid var(--line);
-  border-radius: 14px;
-  padding: 14px 12px;
-  cursor: pointer;
-  transition: all 0.22s ease;
-  display: flex;
-  flex-direction: column;
-}
-.vip-tier-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-}
-.vip-tier-card.selected {
-  background: linear-gradient(135deg, rgba(214, 150, 35, 0.12), rgba(76, 21, 68, 0.08));
-  border-color: var(--gold-rich);
-  box-shadow: 0 4px 16px rgba(214, 150, 35, 0.25);
-}
-.tier-badge-pill {
-  position: absolute;
-  top: -9px;
-  right: 10px;
-  background: linear-gradient(135deg, var(--gold-rich), #c5861b);
-  color: var(--plum-deep);
-  font-size: 0.66rem;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 999px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-.tier-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-.tier-header b {
-  font-size: 0.88rem;
-  color: var(--plum-deep);
-}
-.tier-budget {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.tier-desc {
-  font-size: 0.72rem;
-  color: var(--mut);
-  line-height: 1.35;
-  margin: 0 0 8px;
-  flex-grow: 1;
-}
-.tier-perks-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.7rem;
-  color: var(--plum-deep);
-  line-height: 1.5;
-  border-top: 1px dashed var(--line);
-  padding-top: 6px;
-}
-.tier-perks-list li {
-  margin-bottom: 2px;
-}
 .director-avatar {
   width: 56px;
   height: 56px;

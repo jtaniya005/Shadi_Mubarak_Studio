@@ -54,6 +54,12 @@
   5. **Suggested Vendors by Preferences:** Algorithmic recommendation scoring based on theme harmony, ratings, and unshortlisted candidates.
 - **AI Planning Suggestions & Advisory:** Automated heuristic alerts advising on budget category variances, pending milestones, and next critical tasks.
 
+### 6. Interactive AI Vivah Voice Concierge (Web Speech API)
+- **Natural Speech Synthesis:** Welcomes users with a warm royal greeting in natural accents using `window.speechSynthesis`.
+- **Two-Way Voice Commands:** Microphone input (`webkitSpeechRecognition`) allowing users to speak questions like *"What is my budget?"*, *"Show venues in Udaipur"*, *"Recommend catering"*, or *"What are my pending tasks?"*.
+- **Autonomous Audio Guidance & Navigation:** Speaks back real-time calculated answers and automatically routes users to the relevant studio or directory module.
+- **100% Client-Side:** Built using native Web Speech standards with zero external backend or API key required.
+
 ---
 
 ## 🛠️ Architecture & Tech Stack

@@ -1697,8 +1697,8 @@ td:first-child {
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1.2fr 1.4fr;
-  gap: 36px;
+  grid-template-columns: 2.2fr 1.2fr 1.4fr;
+  gap: 40px;
   padding-bottom: 36px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

@@ -82,18 +82,6 @@ function SiteHeader({ onOpenVip }) {
 }
 
 function SiteFooter({ onOpenVip }) {
-  const { set } = useStore();
-
-  const handleResetData = () => {
-    if (window.confirm("Reset all studio demo data to initial sample state?")) {
-      localStorage.removeItem("shadi_mubarak");
-      localStorage.removeItem("subh_vivah");
-      localStorage.removeItem("saptapadi");
-      set(INIT);
-      window.location.reload();
-    }
-  };
-
   return (
     <footer className="web-footer">
       <div className="footer-cols">
@@ -119,34 +107,23 @@ function SiteFooter({ onOpenVip }) {
         </div>
 
         <div className="footer-col">
-          <h4>Main Modules</h4>
+          <h4>Explore &amp; Plan</h4>
           <ul>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/dashboard">Wedding Dashboard</Link></li>
-            <li><Link to="/vendors">Vendor Explorer &amp; Directory</Link></li>
-            <li><Link to="/vendors/1">Vendor Profiles &amp; Quotes</Link></li>
-            <li><Link to="/planner">Wedding Planner &amp; Budget</Link></li>
-            <li><Link to="/insights">AI Styling &amp; Vendor Insights</Link></li>
+            <li><Link to="/vendors">Vendor Explorer</Link></li>
+            <li><Link to="/planner">Ceremony Planner &amp; Budget</Link></li>
+            <li><Link to="/insights">AI Styling Insights</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>Studio Features</h4>
+          <h4>Royal Services</h4>
           <ul>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Search &amp; Compare Vendors</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Save Preferred Profiles</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Plan Ceremony Dates &amp; Tasks</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Track Sample Wedding Expenses</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ View AI Planning Insights</span></li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4>Concierge &amp; Destinations</h4>
-          <ul>
-            <li><Link to="/vendors">Jaipur &amp; Udaipur Palaces</Link></li>
-            <li><Link to="/planner">Round-Table Seating Studio</Link></li>
+            <li><Link to="/vendors">Heritage Palaces &amp; Venues</Link></li>
+            <li><Link to="/vendors">Master Caterers &amp; Menus</Link></li>
             <li><button onClick={onOpenVip} style={{ background: "none", border: 0, padding: 0, color: "var(--gold)", cursor: "pointer", font: "inherit", fontSize: "0.88rem" }}>VIP Vivah Concierge</button></li>
-            <li><button onClick={handleResetData} style={{ background: "none", border: 0, padding: 0, color: "#d8c2d5", cursor: "pointer", font: "inherit", fontSize: "0.82rem", textDecoration: "underline" }}>↻ Reset Demo Data</button></li>
+            <li><span className="muted" style={{ fontSize: "0.84rem" }}>Direct Line: +91 800-SHADI-MUBARAK</span></li>
           </ul>
         </div>
       </div>
@@ -154,7 +131,7 @@ function SiteFooter({ onOpenVip }) {
       <div className="footer-bottom">
         <div>&copy; 2026-2027 ShadiMubarak Wedding Studio. All rights reserved.</div>
         <div style={{ color: "var(--mut)", fontSize: "0.8rem" }}>
-          Transparent Pricing · Verified Credentials · Auspicious Vedic Muhurats · Real-time LocalStorage
+          Transparent Pricing · Verified Credentials · Auspicious Vedic Muhurats
         </div>
       </div>
     </footer>

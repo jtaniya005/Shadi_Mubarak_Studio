@@ -88,14 +88,14 @@ function Dashboard({ onOpenVip }) {
             />
           </div>
           <div style={{ display: "inline-block", background: "rgba(214, 150, 35, 0.15)", color: "var(--plum-deep)", padding: "3px 10px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, margin: "8px 0 6px" }}>
-            HOME & DISCOVERY INTERFACE
+            WEDDING DASHBOARD
           </div>
           <h1>
-            Wedding Dashboard<br />
-            <span>& Planning Command Center</span>
+            Wedding Planning &amp;<br />
+            <span>Vendor Coordination Dashboard</span>
           </h1>
           <p className="muted" style={{ fontSize: "1.02rem", maxWidth: "620px", margin: "6px 0 12px" }}>
-            Wedding planning homepage with event countdown, milestones, budget summary and interactive planning checklist.
+            Comprehensive wedding command center featuring live event countdown, ritual milestones, budget summary, and interactive ceremony checklists for {s.couple}.
           </p>
 
           <div style={{ marginTop: "10px" }}>

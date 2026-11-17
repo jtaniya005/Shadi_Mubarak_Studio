@@ -69,7 +69,7 @@ function Insights() {
     <>
       <div>
         <div style={{ display: "inline-block", background: "rgba(214, 150, 35, 0.15)", color: "var(--plum-deep)", padding: "3px 10px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, marginBottom: "6px" }}>
-          AI BEHAVIOR & DATA INSIGHTS
+          AI STYLING INTELLIGENCE
         </div>
         <h1>AI Styling & Vendor Insights</h1>
         <p className="muted" style={{ fontSize: "0.95rem", margin: "4px 0 16px" }}>

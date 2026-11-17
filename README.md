@@ -1,94 +1,105 @@
-# Project 34 — Wedding Planning & Vendor Coordination Dashboard
+# ShadiMubarak — Luxury Wedding Planning & Vendor Coordination Studio
 
-**Assigned Student:** TANIYA JOSHI  
-**Technology:** React.js  
-**Development Scope:** Frontend Only  
-**Application Name:** ShadiMubarak Wedding Studio  
+**ShadiMubarak** is a modern, responsive wedding planning and vendor coordination web platform built with React 18, React Router, custom SVG visualizations, and client-side `localStorage` persistence. It unifies palatial vendor discovery, side-by-side vendor comparisons, cultural ceremony timelines, interactive guest-list seating layouts, itemized wedding accounts, and rule-based AI styling intelligence into one seamless luxury experience.
 
 ---
 
-## 📋 Project Specifications & Deliverables Mapping
+## 🌟 Core Product Features & Modules
 
-### 1. 5 Development Tasks
+### 1. Wedding Dashboard (`/dashboard`)
+- **Auspicious Event Countdown:** Interactive countdown arch calculating days to the sacred ceremony with a date picker.
+- **Milestone Progress Ring:** Real-time completion tracker for ceremony rituals and planning tasks.
+- **Budget Health Overview:** Dynamic budget utilization progress bar with live remaining balance calculation.
+- **Ceremony Checklist:** Interactive ritual checklist to check/uncheck tasks with instant state persistence.
+- **Shubh Muhurat Auspicious Calendar:** Aligned with Vedic astrology, high Guna, and sacred Nakshatras.
+- **Dream Wedding Cost Estimator:** Real-time budget allocation benchmark based on guest count and destination city.
 
-| Task # | Task Name | Specifications & Implementation | File / Component |
-| :--- | :--- | :--- | :--- |
-| **Task 1** | **Home & Discovery Interface** | Wedding planning homepage with event countdown, milestones, budget summary and planning checklist. | [`Home.jsx`](src/pages/Home.jsx), [`Dashboard.jsx`](src/pages/Dashboard.jsx) |
-| **Task 2** | **Directory & Filtering Interface** | Vendor directory for decor, photography, venues and catering with filters (search, category, city, price/rating sorting) and side-by-side comparison interface. | [`Explorer.jsx`](src/pages/Explorer.jsx), [`VendorCard.jsx`](src/components/VendorCard.jsx) |
-| **Task 3** | **Details & Management Interface** | Event timeline with ceremony schedules, tasks, responsibilities and progress indicators. | [`Planner.jsx`](src/pages/Planner.jsx) (`timeline` tab) |
-| **Task 4** | **Workflow & Tracking Interface** | Guest-list and budget modules with RSVP mockups, seating previews (Round tables T1–T4) and expenditure breakdowns with Donut charts. | [`Planner.jsx`](src/pages/Planner.jsx) (`guests` & `budget` tabs) |
-| **Task 5** | **AI — Behavior / Data Insights** | AI planning suggestions based on sample budget categories, vendor comparisons and pending milestones. | [`Insights.jsx`](src/pages/Insights.jsx), [`Bars.jsx`](src/components/Bars.jsx) |
+### 2. Vendor Explorer & Directory (`/vendors`)
+- **Curated Multi-Category Directory:** Handpicked partners across **Venues, Royal Catering, Bespoke Decor, and Cinema & Photography**.
+- **Comprehensive Filtering & Search:**
+  - Real-time text search by vendor name, style, or cuisine.
+  - Category dropdown filter.
+  - Destination city filter (*Jaipur, Udaipur, Delhi, Goa, Mumbai*).
+  - Sorting by Highest Rating or Starting Price.
+  - Verified partners audit filter.
+- **Side-by-Side Comparison Matrix:** Compare up to 3 selected vendors simultaneously across pricing, ratings, experience, verified audit credentials, and aesthetic themes.
 
----
+### 3. Vendor Profiles & Quotations (`/vendors/:id`)
+- **Detailed Vendor Showcase:** High-resolution imagery, experience level, verified audit badges, and stylistic themes.
+- **Service Tier Cards:** Interactive package selection with transparent pricing.
+- **Direct Quotation Request Generator:** Custom note and requirements generator that saves inquiries directly into the user's studio.
+- **Save to Shortlist:** Heart toggle to bookmark preferred vendors.
 
-### 2. Main Pages (5)
+### 4. Wedding Planner & Budget Suite (`/planner`)
+- **Ceremony Timeline & Ritual Pack Loader:**
+  - Schedule ceremonies (*Mehendi & Sangeet, Wedding Ceremony / Saat Phere, etc.*).
+  - One-click cultural tradition pack loader (*North Indian / Punjabi, Marwari / Rajasthani, South Indian*).
+  - Add custom ceremonies, dates, and assign tasks with designated team members.
+- **Guest List & Visual Seating Studio:**
+  - Guest directory with RSVP state toggling (`Yes`, `Pending`, `No`).
+  - Guest group segmentation by bride's or groom's side.
+  - Visual round banqueting table layout (`T1`–`T4`) with real-time occupancy and RSVP color indicators.
+- **Budget & Accounts Management:**
+  - Total wedding budget target adjuster.
+  - Interactive SVG Category Donut Chart.
+  - Itemized expenditure ledger with `Paid` vs `Due` toggling and custom expense creation.
+- **Quotation Inquiries Tracker:** Centralized tracker for all submitted vendor quote requests.
 
-1. **Wedding Dashboard** (`/dashboard` & `/studio`):
-   - Interactive wedding countdown arch with date picker.
-   - Milestone progress ring and pending ceremony tracker.
-   - Real-time budget utilization progress bar.
-   - Interactive ceremony checklists (check/uncheck rituals).
-   - Shubh Muhurat Vedic auspicious dates selector.
-   - Dream Wedding cost estimator & benchmark tool.
-
-2. **Vendor Explorer** (`/vendors`):
-   - Curated directory across 4 categories: **Venues, Catering, Decor, Photography**.
-   - Multi-filter suite: live search query, category dropdown, destination city dropdown, and sorting (by rating / starting price).
-   - Side-by-side comparison matrix for up to 3 selected vendors comparing verified status, pricing, themes, experience, and audit points.
-
-3. **Vendor Profiles & Quotes** (`/vendors/:id`):
-   - Detailed vendor showcase with experience, ratings, verified audit points, and themes.
-   - Interactive package selection radio cards.
-   - Direct quotation request generator saving quotes to `localStorage`.
-   - Save / Shortlist favorite vendor profiles.
-
-4. **Wedding Planner & Budget** (`/planner`):
-   - **Ceremonies & Rituals:** Timeline schedules, cultural ritual pack loader (North Indian, Marwari, South Indian), add ceremonies and assign tasks to family members.
-   - **Guest List & Seating Studio:** RSVP state management (`Yes`, `Pending`, `No`), add new guests, table assignment (`T1`–`T4`), and visual round-table seating chart.
-   - **Budget & Accounts:** Dynamic total budget target, category expenditure Donut chart, itemized expense tracker with `Paid` vs `Due` toggling.
-   - **Vendor Quotes:** Real-time view of all submitted quotation inquiries.
-
-5. **AI Styling & Vendor Insights** (`/insights`):
-   - **Rule-based AI features displaying (5):**
-     1. *Preferred wedding themes* (Theme Affinity & Palette Match chart).
-     2. *Frequently viewed vendor types* (Browsing history matrix chart).
-     3. *Budget allocation patterns* (Actual spend vs Vedic benchmark variance chart).
-     4. *Popular service packages* (Demand distribution chart).
-     5. *Suggested vendors by preferences* (Algorithmic scoring matching theme, rating, top browsed category, and unshortlisted candidates).
-   - **AI Planning Suggestions & Milestones:** Dynamic heuristic alerts on budget category overspending, milestone prioritization, and recommendations.
-
----
-
-### 3. Functional Requirements (5)
-
-- [x] **Search and compare vendors:** Real-time text search, category/city filtering, and side-by-side 3-vendor comparison matrix.
-- [x] **Save preferred vendor profiles:** Heart toggle to shortlist vendors persisted in `localStorage`.
-- [x] **Plan ceremony dates and tasks:** Multi-ceremony event timeline with date selection, task addition, designated person assignment, and checkbox completion.
-- [x] **Track sample wedding expenses:** Budget management with itemized accounts, category Donut visualization, and Paid/Due tracking.
-- [x] **View planning insights:** AI styling analytics, category variance bars, and automated heuristic suggestions.
+### 5. AI Styling & Vendor Insights (`/insights`)
+- **Rule-Based Heuristic Visualizations:**
+  1. **Preferred Wedding Themes:** Theme affinity and color palette match chart.
+  2. **Frequently Viewed Vendor Types:** Real-time browsing history matrix tracked across profile views.
+  3. **Budget Allocation Patterns:** Actual spend % vs recommended Vedic wedding benchmark % variance chart.
+  4. **Popular Service Packages:** Most requested package tiers distribution.
+  5. **Suggested Vendors by Preferences:** Algorithmic recommendation scoring based on theme harmony, ratings, and unshortlisted candidates.
+- **AI Planning Suggestions & Advisory:** Automated heuristic alerts advising on budget category variances, pending milestones, and next critical tasks.
 
 ---
 
-### 4. Implementation Details
+## 🛠️ Architecture & Tech Stack
 
-- **Framework:** React.js 18 (SPA)
-- **Routing:** React Router DOM (HashRouter)
-- **State Management:** React Context API with automatic `localStorage` persistence
-- **Charts:** Native SVG charts (Donut chart, horizontal comparative bar charts, seating preview)
-- **Styling:** Custom luxury royal wedding design system with palette tokens (Plum, Gold, Teal, Rose)
-- **No Backend / Live API Required:** 100% client-side with mock JSON data and `localStorage`.
+- **Frontend Framework:** React 18 (SPA)
+- **Routing:** React Router DOM (HashRouter for clean static hosting compatibility)
+- **State Management:** React Context API (`StoreContext`) with transparent `localStorage` synchronization
+- **Styling:** Custom CSS Design System with royal Indian wedding color tokens (Plum, Rich Gold, Emerald Teal, Ruby Rose)
+- **Visualizations:** Pure SVG Data Visualizations (Donut chart, Horizontal comparative bars, Progress rings, Round-table layout)
+- **Zero Backend Dependency:** 100% client-side execution with mock JSON dataset and `localStorage` persistence
 
 ---
 
-### 5. Running the Project
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or pnpm
+
+### Installation
 
 ```bash
-# 1. Install dependencies
+# Clone the repository
+git clone https://github.com/jtaniya005/Shadi_Mubarak_Studio.git
+
+# Navigate to project directory
+cd Shadi_Mubarak_Studio
+
+# Install dependencies
 npm install
 
-# 2. Run local development server
+# Start development server
 npm run dev
+```
 
-# 3. Build for production
+The application will be available at `http://localhost:5173`.
+
+### Production Build
+
+```bash
 npm run build
 ```
+
+The optimized production assets will be output to the `dist/` directory.
+
+---
+
+## 📄 License
+This project is open-source under the MIT License.

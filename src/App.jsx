@@ -13,18 +13,18 @@ import { VIP_CONCIERGE_FEATURES, INIT } from "./data/mockData";
 import { days } from "./utils/helpers";
 
 const NAV_LINKS = [
-  ["/", "Discovery Home", "sparkles"],
+  ["/", "Home", "sparkles"],
   ["/dashboard", "Wedding Dashboard", "palace"],
   ["/vendors", "Vendor Explorer", "ring"],
   ["/planner", "Wedding Planner & Budget", "planner"],
   ["/insights", "AI Styling & Vendor Insights", "insights"]
 ];
 
-function ProjectRibbon() {
+function TopAnnouncementBar() {
   const { set } = useStore();
 
   const handleResetData = () => {
-    if (window.confirm("Reset all project data to default sample state (couple, budget, vendors, ceremonies)?")) {
+    if (window.confirm("Reset all studio demo data to initial sample state?")) {
       localStorage.removeItem("shadi_mubarak");
       localStorage.removeItem("subh_vivah");
       localStorage.removeItem("saptapadi");
@@ -34,19 +34,17 @@ function ProjectRibbon() {
   };
 
   return (
-    <div className="academic-ribbon">
-      <div className="academic-ribbon-inner">
-        <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-          <span className="academic-badge">Project 34</span>
-          <span style={{ fontWeight: 600 }}>Wedding Planning &amp; Vendor Coordination Dashboard</span>
-          <span style={{ opacity: 0.5 }}>|</span>
-          <span>Assigned Student: <strong style={{ color: "var(--gold-soft)" }}>TANIYA JOSHI</strong></span>
-          <span style={{ opacity: 0.5 }}>|</span>
-          <span style={{ opacity: 0.9 }}>Frontend Scope: <strong>React.js (No Backend Required)</strong></span>
+    <div className="top-announcement-bar">
+      <div className="announcement-inner">
+        <div className="announcement-left">
+          <span className="announcement-pill">LUXURY STUDIO</span>
+          <span>India's Premier Wedding Planning &amp; Vendor Coordination Platform</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <button className="academic-reset-btn" onClick={handleResetData} title="Reset localStorage to sample data">
-            ↻ Reset Sample Data
+        <div className="announcement-right">
+          <span>Concierge Hotline: <strong>+91 800-SHADI-MUBARAK</strong></span>
+          <span className="sep">•</span>
+          <button className="reset-demo-btn" onClick={handleResetData} title="Reset demo data">
+            ↻ Reset Demo
           </button>
         </div>
       </div>
@@ -67,7 +65,7 @@ function SiteHeader({ onOpenVip }) {
           <Arch tone="gold" className="mini" />
           <div className="brand-text">
             <span className="brand-name">ShadiMubarak</span>
-            <span className="brand-sub">WEDDING DASHBOARD</span>
+            <span className="brand-sub">WEDDING STUDIO</span>
           </div>
         </Link>
 
@@ -121,59 +119,59 @@ function SiteFooter({ onOpenVip }) {
             <Arch tone="gold" className="mini" />
             <div>
               <span style={{ fontSize: "1.3rem", fontWeight: 700, color: "#fff", display: "block" }}>ShadiMubarak</span>
-              <span style={{ fontSize: "0.7rem", letterSpacing: "1.5px", textTransform: "uppercase", color: "var(--gold-rich)" }}>Project 34 — Student: Taniya Joshi</span>
+              <span style={{ fontSize: "0.7rem", letterSpacing: "1.5px", textTransform: "uppercase", color: "var(--gold-rich)" }}>Wedding Planning Studio</span>
             </div>
           </div>
           <p className="muted" style={{ fontSize: "0.86rem", lineHeight: 1.6 }}>
-            Comprehensive wedding planning and vendor coordination dashboard built with React.js, React Router, localStorage persistence, SVG charts, and rule-based AI styling insights.
+            India's premier wedding planning and vendor coordination platform, uniting heritage palaces, verified caterers, cultural ceremony timelines, and rule-based AI styling intelligence.
           </p>
           <div className="footer-rating-strip" style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
               <Icon name="star" size={14} color="var(--gold-rich)" />
-              <b>5 Core Tasks &amp; 5 Main Pages</b>
+              <b>4.9/5 Rating</b>
             </span>
             <span>·</span>
-            <span>Frontend Only (No Backend Required)</span>
+            <span>10,000+ Dream Weddings Coordinated</span>
           </div>
         </div>
 
         <div className="footer-col">
-          <h4>5 Main Pages</h4>
+          <h4>Main Modules</h4>
           <ul>
-            <li><Link to="/dashboard">1. Wedding Dashboard</Link></li>
-            <li><Link to="/vendors">2. Vendor Explorer</Link></li>
-            <li><Link to="/vendors/1">3. Vendor Profiles &amp; Quotes</Link></li>
-            <li><Link to="/planner">4. Wedding Planner &amp; Budget</Link></li>
-            <li><Link to="/insights">5. AI Styling &amp; Vendor Insights</Link></li>
+            <li><Link to="/dashboard">Wedding Dashboard</Link></li>
+            <li><Link to="/vendors">Vendor Explorer &amp; Directory</Link></li>
+            <li><Link to="/vendors/1">Vendor Profiles &amp; Quotes</Link></li>
+            <li><Link to="/planner">Wedding Planner &amp; Budget</Link></li>
+            <li><Link to="/insights">AI Styling &amp; Vendor Insights</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>5 Functional Tasks</h4>
+          <h4>Studio Features</h4>
           <ul>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Search &amp; compare vendors</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Save preferred vendor profiles</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Plan ceremony dates &amp; tasks</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Track sample wedding expenses</span></li>
-            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ View AI planning insights</span></li>
+            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Search &amp; Compare Vendors</span></li>
+            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Save Preferred Profiles</span></li>
+            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Plan Ceremony Dates &amp; Tasks</span></li>
+            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ Track Sample Wedding Expenses</span></li>
+            <li><span style={{ color: "var(--gold-soft)", fontSize: "0.85rem" }}>✓ View AI Planning Insights</span></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4>Quick Controls</h4>
+          <h4>Concierge &amp; Destinations</h4>
           <ul>
-            <li><Link to="/dashboard">Countdown &amp; Milestones</Link></li>
-            <li><Link to="/planner">Seating Studio &amp; Accounts</Link></li>
-            <li><button onClick={onOpenVip} style={{ background: "none", border: 0, padding: 0, color: "var(--gold)", cursor: "pointer", font: "inherit", fontSize: "0.88rem" }}>VIP Concierge Modal</button></li>
-            <li><Link to="/vendors">Vendor Directory ({NAV_LINKS.length} Modules)</Link></li>
+            <li><Link to="/vendors">Jaipur &amp; Udaipur Palaces</Link></li>
+            <li><Link to="/planner">Round-Table Seating Studio</Link></li>
+            <li><button onClick={onOpenVip} style={{ background: "none", border: 0, padding: 0, color: "var(--gold)", cursor: "pointer", font: "inherit", fontSize: "0.88rem" }}>VIP Vivah Concierge</button></li>
+            <li><span className="muted" style={{ fontSize: "0.82rem" }}>Direct Line: +91 800-SHADI-MUBARAK</span></li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <div>&copy; Project 34 — Wedding Planning &amp; Vendor Coordination Dashboard | Assigned Student: <strong>TANIYA JOSHI</strong></div>
+        <div>&copy; 2026-2027 ShadiMubarak Wedding Studio. All rights reserved.</div>
         <div style={{ color: "var(--mut)", fontSize: "0.8rem" }}>
-          React.js · React Router DOM · Mock JSON &amp; LocalStorage · Responsive UI
+          Transparent Pricing · Verified Credentials · Auspicious Vedic Muhurats · Real-time LocalStorage
         </div>
       </div>
     </footer>
@@ -199,7 +197,7 @@ function ShellInner() {
 
   return (
     <div className="website-shell">
-      <ProjectRibbon />
+      <TopAnnouncementBar />
       <SiteHeader onOpenVip={() => setShowVipModal(true)} />
 
       <main className="website-main">

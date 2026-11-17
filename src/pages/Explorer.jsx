@@ -45,7 +45,7 @@ function Explorer() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: "10px" }}>
         <div>
           <div style={{ display: "inline-block", background: "rgba(214, 150, 35, 0.15)", color: "var(--plum-deep)", padding: "3px 10px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, marginBottom: "6px" }}>
-            DIRECTORY & FILTERING INTERFACE
+            CURATED VENDOR DIRECTORY
           </div>
           <h1>Vendor Explorer</h1>
           <p className="muted" style={{ margin: "2px 0 0", fontSize: "0.95rem" }}>

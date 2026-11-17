@@ -3,7 +3,6 @@ import { HashRouter, Routes, Route, NavLink, Link, useLocation } from "react-rou
 import { StoreProvider, useStore } from "./context/StoreContext";
 import Arch from "./components/Arch";
 import Icon from "./components/Icons";
-import VoiceConcierge from "./components/VoiceConcierge";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Explorer from "./pages/Explorer";
@@ -194,9 +193,6 @@ function ShellInner() {
           <Route path="/insights" element={<Insights />} />
         </Routes>
       </main>
-
-      {/* Global Interactive AI Vivah Voice Concierge */}
-      <VoiceConcierge />
 
       <SiteFooter onOpenVip={() => setShowVipModal(true)} />
 

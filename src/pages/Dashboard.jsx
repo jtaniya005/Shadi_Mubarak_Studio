@@ -45,7 +45,7 @@ function Dashboard({ onOpenVip }) {
           </Link>
           <span className="muted">/</span>
           <span style={{ fontWeight: 600, color: "var(--plum-deep)", fontSize: "0.92rem" }}>
-            {s.couple}'s Private Planning Studio
+            Wedding Planning Studio
           </span>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
@@ -78,13 +78,13 @@ function Dashboard({ onOpenVip }) {
           <div className="couple-header-edit">
             <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
               <Icon name="sparkles" size={13} color="var(--gold)" />
-              <span>Planning for:</span>
+              <span>Couple Names:</span>
             </span>
             <input
               type="text"
               value={s.couple}
               onChange={(e) => set({ couple: e.target.value })}
-              title="Click to edit couple name"
+              title="Click to customize couple names"
             />
           </div>
           <div style={{ display: "inline-block", background: "rgba(214, 150, 35, 0.15)", color: "var(--plum-deep)", padding: "3px 10px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, margin: "8px 0 6px" }}>
@@ -95,7 +95,7 @@ function Dashboard({ onOpenVip }) {
             <span>Vendor Coordination Dashboard</span>
           </h1>
           <p className="muted" style={{ fontSize: "1.02rem", maxWidth: "620px", margin: "6px 0 12px" }}>
-            Comprehensive wedding command center featuring live event countdown, ritual milestones, budget summary, and interactive ceremony checklists for {s.couple}.
+            Comprehensive wedding command center featuring live event countdown, ritual milestones, budget summary, and interactive ceremony checklists.
           </p>
 
           <div style={{ marginTop: "10px" }}>

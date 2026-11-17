@@ -95,18 +95,18 @@ function Home({ onOpenVip }) {
             </div>
           </form>
 
-          {/* Couple Active Wedding Ticker */}
+          {/* Studio Quick-Access Ticker */}
           <div className="couple-wedding-bar">
             <div className="couple-info">
-              <b>{s.couple}</b>
-              <span>Auspicious Wedding: {new Date(s.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
+              <b>Private Wedding Studio</b>
+              <span>Personalized timelines, seating layouts &amp; live budget ledger</span>
             </div>
             <div className="countdown-pill" style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
-              <Icon name="clock" size={14} color="var(--gold-soft)" />
-              <span><b>{days(s.date)}</b> Days to Sacred Ceremony</span>
+              <Icon name="sparkles" size={14} color="var(--gold-soft)" />
+              <span>Personalized for Your Ceremony</span>
             </div>
-            <Link to="/studio" className="btn ghost" style={{ borderRadius: "999px", padding: "6px 14px", fontSize: "0.82rem", display: "inline-flex", alignItems: "center", gap: 6 }}>
-              <span>Open Couple Studio</span>
+            <Link to="/dashboard" className="btn ghost" style={{ borderRadius: "999px", padding: "6px 14px", fontSize: "0.82rem", display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <span>Open Wedding Studio</span>
               <Icon name="arrowRight" size={13} />
             </Link>
           </div>

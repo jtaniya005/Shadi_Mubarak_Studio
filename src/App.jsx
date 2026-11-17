@@ -66,15 +66,15 @@ function SiteHeader({ onOpenVip }) {
 
         {/* Right Action buttons */}
         <div className="header-actions">
+          <Link to="/vendors" className="header-shortlist-btn" title="View Shortlisted Vendors">
+            <Icon name="heart" size={14} color="var(--rose)" />
+            <span>Shortlist ({s.saved.length})</span>
+          </Link>
+
           <button className="vip-action-btn" onClick={onOpenVip}>
             <Icon name="crown" size={14} />
             <span>VIP Concierge</span>
           </button>
-          
-          <Link to="/dashboard" className={`couple-profile-chip ${isDashboardActive ? "active" : ""}`} title="Open Wedding Studio">
-            <span className="couple-avatar-dot">💍</span>
-            <span className="couple-chip-name">{s.couple.split(" & ")[0] || "Studio"}</span>
-          </Link>
         </div>
       </div>
     </header>

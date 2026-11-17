@@ -669,6 +669,142 @@ small { font-size: 0.82rem; }
   font-size: 0.88rem;
 }
 
+/* Executive Dashboard Header */
+.dashboard-exec-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #fcf9f5 100%);
+  border: 1px solid var(--line-gold);
+  border-radius: 20px;
+  padding: 26px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(76, 21, 68, 0.05);
+  position: relative;
+}
+.exec-hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.exec-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(214, 150, 35, 0.12);
+  color: var(--plum-deep);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.exec-hero-title {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.85rem;
+  color: var(--plum-deep);
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+.exec-hero-desc {
+  font-size: 0.92rem;
+  color: var(--mut);
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.5;
+}
+.exec-theme-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* 4-KPI Metric Strip */
+.exec-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.exec-kpi-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+.exec-kpi-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214, 150, 35, 0.12);
+}
+.exec-kpi-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--mut);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.exec-kpi-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--plum-deep);
+  font-family: Fraunces, Georgia, serif;
+}
+.exec-kpi-sub {
+  font-size: 0.74rem;
+  color: var(--mut);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.exec-couple-input {
+  border: 1px solid transparent;
+  background: transparent;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--plum-deep);
+  padding: 2px 4px;
+  border-radius: 4px;
+  width: 100%;
+}
+.exec-couple-input:hover,
+.exec-couple-input:focus {
+  border-color: var(--gold);
+  background: var(--bg-warm);
+}
+.exec-date-input {
+  border: 1px solid var(--line);
+  background: var(--bg-warm);
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 0.72rem;
+  color: var(--plum-deep);
+  cursor: pointer;
+}
+@media (max-width: 960px) {
+  .exec-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 580px) {
+  .exec-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* General Hero (Inside Dashboard / Studio) */
 .hero {
   display: grid;

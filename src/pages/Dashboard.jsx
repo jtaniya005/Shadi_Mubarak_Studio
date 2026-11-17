@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStore } from "../context/StoreContext";
 import Card from "../components/Card";
-import Arch from "../components/Arch";
 import Icon from "../components/Icons";
 import Progress from "../components/Progress";
 import { THEMES, VENDORS, SHUBH_MUHURATS, REAL_STORIES } from "../data/mockData";
@@ -60,48 +59,26 @@ function Dashboard({ onOpenVip }) {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <div className="hero">
-        <Arch tone="plum" className="heroarch">
-          <small>{s.couple}</small>
-          <div className="big">{days(s.date)}</div>
-          <p>days to the auspicious ceremony</p>
-          <input
-            type="date"
-            aria-label="Wedding date"
-            value={s.date}
-            onChange={(e) => set({ date: e.target.value })}
-          />
-        </Arch>
+      {/* Executive Command Header */}
+      <div className="dashboard-exec-hero">
+        <div className="exec-hero-top">
+          <div>
+            <div className="exec-hero-tag">
+              <Icon name="sparkles" size={13} color="var(--gold-rich)" />
+              <span>Wedding Planning &bull; Command Center</span>
+            </div>
+            <h1 className="exec-hero-title">
+              Wedding Planning &amp; Vendor Coordination
+            </h1>
+            <p className="exec-hero-desc">
+              Your comprehensive wedding command center for auspicious ceremony timelines, verified vendor selections, budget tracking, and cultural checklists.
+            </p>
+          </div>
 
-        <div className="herotext">
-          <div className="couple-header-edit">
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-              <Icon name="sparkles" size={13} color="var(--gold)" />
-              <span>Couple Names:</span>
+          <div className="exec-theme-strip">
+            <span style={{ fontSize: "0.78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.8px", color: "var(--plum)" }}>
+              Theme Vibe:
             </span>
-            <input
-              type="text"
-              value={s.couple}
-              onChange={(e) => set({ couple: e.target.value })}
-              title="Click to customize couple names"
-            />
-          </div>
-          <div style={{ display: "inline-block", background: "rgba(214, 150, 35, 0.15)", color: "var(--plum-deep)", padding: "3px 10px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, margin: "8px 0 6px" }}>
-            WEDDING DASHBOARD
-          </div>
-          <h1>
-            Wedding Planning &amp;<br />
-            <span>Vendor Coordination Dashboard</span>
-          </h1>
-          <p className="muted" style={{ fontSize: "1.02rem", maxWidth: "620px", margin: "6px 0 12px" }}>
-            Comprehensive wedding command center featuring live event countdown, ritual milestones, budget summary, and interactive ceremony checklists.
-          </p>
-
-          <div style={{ marginTop: "10px" }}>
-            <small style={{ fontWeight: 700, color: "var(--plum)", textTransform: "uppercase", letterSpacing: "1px" }}>
-              Signature Theme Vibe:
-            </small>
             <div className="chips" role="radiogroup" aria-label="Wedding theme">
               {THEMES.map((t) => (
                 <button
@@ -114,6 +91,87 @@ function Dashboard({ onOpenVip }) {
                   {t}
                 </button>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 4-KPI Executive Metric Strip */}
+        <div className="exec-kpi-grid">
+          {/* KPI 1: Ceremony Date & Days Remaining */}
+          <div className="exec-kpi-card">
+            <span className="exec-kpi-label">
+              <Icon name="diya" size={13} color="var(--gold-rich)" />
+              <span>Ceremony Date</span>
+            </span>
+            <div className="exec-kpi-val" style={{ fontSize: "1.05rem" }}>
+              {new Date(s.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+            </div>
+            <div className="exec-kpi-sub">
+              <span style={{ color: "var(--gold)", fontWeight: 700 }}>{days(s.date)} days away</span>
+              <span>&bull;</span>
+              <input
+                type="date"
+                aria-label="Change wedding date"
+                value={s.date}
+                className="exec-date-input"
+                onChange={(e) => set({ date: e.target.value })}
+                title="Click to update wedding date"
+              />
+            </div>
+          </div>
+
+          {/* KPI 2: Celebration Title */}
+          <div className="exec-kpi-card">
+            <span className="exec-kpi-label">
+              <Icon name="sparkles" size={13} color="var(--gold-rich)" />
+              <span>Celebration</span>
+            </span>
+            <input
+              type="text"
+              value={s.couple}
+              onChange={(e) => set({ couple: e.target.value })}
+              className="exec-couple-input"
+              title="Click to edit couple / celebration name"
+              placeholder="e.g. Royal Wedding Celebration"
+            />
+            <div className="exec-kpi-sub">
+              <span>City: <b>{s.city || "Jaipur"}</b></span>
+              <span>&bull;</span>
+              <span>{s.theme}</span>
+            </div>
+          </div>
+
+          {/* KPI 3: Budget Status */}
+          <div className="exec-kpi-card">
+            <span className="exec-kpi-label">
+              <Icon name="gem" size={13} color="var(--gold-rich)" />
+              <span>Budget Status</span>
+            </span>
+            <div className="exec-kpi-val">{inr(s.budget)}</div>
+            <div className="exec-kpi-sub">
+              <span>{inr(spent)} committed</span>
+              <span>({Math.round((spent / (s.budget || 1)) * 100)}%)</span>
+            </div>
+          </div>
+
+          {/* KPI 4: VIP Concierge */}
+          <div
+            className="exec-kpi-card"
+            style={{ cursor: "pointer", border: "1px solid var(--line-gold)", background: "linear-gradient(135deg, #fff 0%, #fffcf5 100%)" }}
+            onClick={onOpenVip}
+          >
+            <span className="exec-kpi-label" style={{ color: "var(--gold)" }}>
+              <Icon name="crown" size={13} color="var(--gold-rich)" />
+              <span>VIP Vivah Concierge</span>
+            </span>
+            <div className="exec-kpi-val" style={{ fontSize: "1rem", color: "var(--gold)" }}>
+              {s.conciergeRequested ? "Director Active" : "Book Vivah Director"}
+            </div>
+            <div className="exec-kpi-sub">
+              <span style={{ color: "var(--teal)", fontWeight: 700 }}>
+                {s.conciergeRequested ? s.conciergeDetails?.director?.name || "Senior Director" : "Complimentary 1-on-1"}
+              </span>
+              <span>&rarr;</span>
             </div>
           </div>
         </div>
@@ -226,7 +284,7 @@ function Dashboard({ onOpenVip }) {
         className="mb"
       >
         <p className="muted" style={{ margin: "0 0 10px", fontSize: "0.9rem" }}>
-          Selected by renowned Vedic astrologers with high Guna and Nakshatra harmony. Click to sync your countdown arch directly!
+          Selected by renowned Vedic astrologers with high Guna and Nakshatra harmony. Click any date to sync your ceremony calendar!
         </p>
         <div className="muhurat-grid">
           {SHUBH_MUHURATS.map((m) => {

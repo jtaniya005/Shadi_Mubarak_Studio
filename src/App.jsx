@@ -55,11 +55,6 @@ function SiteHeader({ onOpenVip }) {
               >
                 <span className="nav-icon"><Icon name={iconName} size={15} /></span>
                 <span className="nav-label">{label}</span>
-                {isDashLink && (
-                  <span className="nav-days-badge">
-                    {days(s.date)}d
-                  </span>
-                )}
               </NavLink>
             );
           })}

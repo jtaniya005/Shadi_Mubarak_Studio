@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route, NavLink, Link, useLocation } from "react-rou
 import { StoreProvider, useStore } from "./context/StoreContext";
 import Arch from "./components/Arch";
 import Icon from "./components/Icons";
+import VipModal from "./components/VipModal";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Explorer from "./pages/Explorer";
@@ -173,67 +174,8 @@ function ShellInner() {
 
       <SiteFooter onOpenVip={() => setShowVipModal(true)} />
 
-      {/* Global VIP Concierge Modal */}
-      {showVipModal && (
-        <div className="modal-overlay" onClick={() => setShowVipModal(false)}>
-          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setShowVipModal(false)} aria-label="Close modal">
-              <Icon name="x" size={18} />
-            </button>
-            
-            <div style={{ textAlign: "center", marginBottom: "20px" }}>
-              <div style={{ display: "inline-flex", padding: 12, borderRadius: "50%", background: "rgba(212,175,55,0.15)", color: "var(--gold-rich)", marginBottom: 8 }}>
-                <Icon name="crown" size={32} />
-              </div>
-              <h2 style={{ margin: "6px 0 4px", color: "var(--plum-deep)" }}>ShadiMubarak VIP Concierge</h2>
-              <p className="muted" style={{ margin: 0, fontSize: "0.9rem" }}>
-                Inspired by elite royal weddings — your dedicated Vivah Director oversees palace sourcing, vendor negotiations, auspicious pandits, and flawless execution.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "20px" }}>
-              {VIP_CONCIERGE_FEATURES.map((f, i) => (
-                <div key={i} style={{ background: "var(--bg-warm)", padding: "12px", borderRadius: "12px", border: "1px solid var(--line)" }}>
-                  <div style={{ color: "var(--gold-rich)", marginBottom: "6px" }}>
-                    <Icon name={f.icon} size={22} />
-                  </div>
-                  <b style={{ display: "block", fontSize: "0.88rem", color: "var(--plum-deep)" }}>{f.title}</b>
-                  <small style={{ color: "var(--mut)", fontSize: "0.78rem" }}>{f.desc}</small>
-                </div>
-              ))}
-            </div>
-
-            {vipSuccess ? (
-              <div className="ok" style={{ textAlign: "center", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
-                <Icon name="checkCircle" size={20} color="var(--emerald)" />
-                <span>Consultation Confirmed! Your dedicated Vivah Director will reach out on WhatsApp/Call within 2 hours.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleBookVip} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                <div>
-                  <label style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, marginBottom: "4px" }}>Couple Names</label>
-                  <input type="text" value={s.couple} onChange={(e) => set({ couple: e.target.value })} required style={{ width: "100%" }} />
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
-                  <div>
-                    <label style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, marginBottom: "4px" }}>Destination City</label>
-                    <select value={cityChoice} onChange={(e) => setCityChoice(e.target.value)} style={{ width: "100%" }}>
-                      {["Jaipur", "Udaipur", "Delhi", "Goa", "Mumbai"].map((c) => <option key={c}>{c}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, marginBottom: "4px" }}>WhatsApp / Phone</label>
-                    <input type="tel" placeholder="+91 98765 43210" value={phone} onChange={(e) => setPhone(e.target.value)} required style={{ width: "100%" }} />
-                  </div>
-                </div>
-                <button type="submit" className="vip-btn" style={{ width: "100%", marginTop: "8px" }}>
-                  Confirm 1-on-1 Consultation (Complimentary)
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
+      {/* Luxury Royal VIP Concierge Modal */}
+      <VipModal isOpen={showVipModal} onClose={() => setShowVipModal(false)} />
     </div>
   );
 }

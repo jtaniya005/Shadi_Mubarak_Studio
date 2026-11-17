@@ -1109,6 +1109,327 @@ small { font-size: 0.82rem; }
   box-shadow: 0 10px 28px rgba(214, 150, 35, 0.4);
 }
 
+/* Luxury VIP Modal & Concierge Styling */
+.luxury-vip-modal {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 680px;
+  width: 100%;
+  padding: 34px 32px;
+  box-shadow: 0 24px 60px rgba(38, 13, 39, 0.4), 0 0 30px rgba(214, 150, 35, 0.15);
+  border: 1.5px solid var(--gold-rich);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScale {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.vip-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--bg-warm);
+  border: 1px solid var(--line);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mut);
+  transition: all 0.2s ease;
+}
+.vip-modal-close:hover {
+  background: var(--plum);
+  color: #fff;
+}
+
+.vip-modal-crest {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.crest-halo {
+  display: inline-flex;
+  padding: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(214, 150, 35, 0.2), rgba(76, 21, 68, 0.1));
+  border: 1px solid rgba(214, 150, 35, 0.4);
+  box-shadow: 0 0 24px rgba(214, 150, 35, 0.25);
+  margin-bottom: 10px;
+}
+.vip-modal-crest h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.7rem;
+  color: var(--plum-deep);
+  margin: 4px 0 2px;
+}
+.vip-crest-tagline {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.vip-crest-desc {
+  font-size: 0.9rem;
+  color: var(--mut);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Service Pills */
+.vip-field-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--plum-deep);
+  margin-bottom: 8px;
+}
+.vip-field-label small {
+  color: var(--mut);
+  font-weight: 400;
+}
+
+.vip-service-chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.vip-service-pill {
+  background: var(--bg-warm);
+  border: 1.5px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.vip-service-pill:hover {
+  border-color: var(--gold);
+}
+.vip-service-pill.active {
+  background: linear-gradient(135deg, rgba(214, 150, 35, 0.15), rgba(76, 21, 68, 0.08));
+  border-color: var(--gold-rich);
+  box-shadow: 0 3px 12px rgba(214, 150, 35, 0.2);
+}
+.vip-service-pill b {
+  font-size: 0.86rem;
+  color: var(--plum-deep);
+}
+.vip-service-pill small {
+  font-size: 0.74rem;
+  color: var(--mut);
+  line-height: 1.3;
+}
+
+/* Form Grid */
+.vip-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.vip-contact-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.vip-trust-badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: var(--bg);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px dashed var(--line-gold);
+  margin-bottom: 18px;
+}
+.badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--plum-deep);
+}
+
+.vip-modal-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold-rich), #c5861b);
+  color: var(--plum-deep);
+  border: 0;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.94rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(214, 150, 35, 0.35);
+  transition: all 0.22s ease;
+}
+.vip-modal-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(214, 150, 35, 0.45);
+}
+
+/* Success View */
+.vip-success-container {
+  padding: 10px 0;
+}
+.vip-assigned-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(20, 107, 90, 0.12);
+  color: var(--teal);
+  border: 1px solid rgba(20, 107, 90, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-bottom: 14px;
+}
+.pulse-dot-green {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 8px var(--teal);
+  animation: pulseDot 1.2s infinite;
+}
+
+.vip-director-card {
+  background: linear-gradient(135deg, #2b0825 0%, #3e1038 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--gold-rich);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(38, 13, 39, 0.2);
+}
+.director-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(214, 150, 35, 0.2);
+  border: 1.5px solid var(--gold-rich);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.director-info h3 {
+  color: var(--gold-soft);
+  margin: 0 0 2px;
+  font-size: 1.25rem;
+}
+.director-role {
+  font-size: 0.82rem;
+  color: #eedfeb;
+  font-weight: 600;
+  display: block;
+}
+.director-exp {
+  font-size: 0.78rem;
+  color: var(--gold-soft);
+  margin: 4px 0 8px;
+}
+.director-phone-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  width: fit-content;
+}
+.director-phone-tag b {
+  color: #fff;
+}
+
+.vip-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.vip-summary-item {
+  background: var(--bg-warm);
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+.vip-summary-item small {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--mut);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.vip-summary-item b {
+  font-size: 0.92rem;
+  color: var(--plum-deep);
+}
+
+.vip-guarantee-note {
+  background: rgba(20, 107, 90, 0.08);
+  border: 1px solid rgba(20, 107, 90, 0.25);
+  color: var(--teal);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.vip-active-banner {
+  border: 1.5px solid var(--gold-rich) !important;
+  box-shadow: 0 10px 32px rgba(214, 150, 35, 0.25) !important;
+}
+.vip-active-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--gold-soft);
+  background: rgba(214, 150, 35, 0.18);
+  border: 1px solid rgba(214, 150, 35, 0.4);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
 /* Modal for VIP Concierge */
 .modal-overlay {
   position: fixed;

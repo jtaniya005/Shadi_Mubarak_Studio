@@ -361,23 +361,51 @@ function Dashboard({ onOpenVip }) {
         )}
       </Card>
 
-      {/* VIP Vivah Concierge Promo Banner */}
-      <div className="vip-card-banner">
-        <div className="vip-banner-content">
-          <div className="vip-banner-text">
-            <h3 style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <Icon name="crown" size={20} color="var(--gold-rich)" />
-              <span>ShadiMubarak VIP Director Service</span>
-            </h3>
-            <p>
-              Looking for bespoke palace sourcing, pandit alignment for rare nakshatras, or end-to-end luxury hospitality? Our Senior Wedding Directors handle every negotiation on your behalf.
-            </p>
+      {/* VIP Vivah Concierge Status / Promo Banner */}
+      {s.conciergeRequested && s.conciergeDetails ? (
+        <div className="vip-card-banner vip-active-banner">
+          <div className="vip-banner-content">
+            <div className="vip-banner-text">
+              <span className="vip-active-tag">
+                <span className="pulse-dot-green"></span>
+                ACTIVE WHITE-GLOVE SUPPORT
+              </span>
+              <h3 style={{ display: "flex", alignItems: "center", gap: 8, margin: "6px 0 4px" }}>
+                <Icon name="crown" size={22} color="var(--gold-rich)" />
+                <span>Assigned Director: {s.conciergeDetails.director?.name || "Gayatri Sen"}</span>
+              </h3>
+              <p style={{ margin: "2px 0 10px", fontSize: "0.92rem", color: "#e8d5e6" }}>
+                {s.conciergeDetails.director?.title} · Reference: <b>{s.conciergeDetails.refCode || "#VIP-ROYAL-7892"}</b> · Priority Hotline: <b>{s.conciergeDetails.director?.phone || "+91 98200 48291"}</b>
+              </p>
+              <small style={{ color: "var(--gold-soft)", fontSize: "0.8rem" }}>
+                ✓ Palace rate cards &amp; verified contract audits are being prepared for {s.conciergeDetails.city || "Jaipur"}.
+              </small>
+            </div>
+            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+              <button className="vip-btn" onClick={onOpenVip}>
+                View VIP Dossier
+              </button>
+            </div>
           </div>
-          <button className="vip-btn" onClick={onOpenVip}>
-            Schedule Private Consultation
-          </button>
         </div>
-      </div>
+      ) : (
+        <div className="vip-card-banner">
+          <div className="vip-banner-content">
+            <div className="vip-banner-text">
+              <h3 style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <Icon name="crown" size={20} color="var(--gold-rich)" />
+                <span>ShadiMubarak VIP Director Service</span>
+              </h3>
+              <p>
+                Looking for bespoke palace sourcing, pandit alignment for rare nakshatras, or end-to-end luxury hospitality? Our Senior Wedding Directors handle every negotiation on your behalf.
+              </p>
+            </div>
+            <button className="vip-btn" onClick={onOpenVip}>
+              Schedule Private Consultation
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

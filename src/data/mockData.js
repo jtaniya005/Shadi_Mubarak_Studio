@@ -317,15 +317,15 @@ const TRADITIONS = {
       daysBefore: 45,
       tasks: [
         { t: "Confirm auspicious lagan time with Pandit ji", who: "Parents" },
-        { t: "Order red Chunni & dry fruit mithai hampers", who: "Bride's Side" },
-        { t: "Book private banquet hall & photographer", who: "Kabir" }
+        { t: "Order red Chunni & dry fruit mithai hampers", who: "Bride's Family" },
+        { t: "Book private banquet hall & photographer", who: "Groom's Family" }
       ]
     },
     {
       name: "Mehendi & Sangeet Soiree",
       daysBefore: 2,
       tasks: [
-        { t: "Book 4 certified bridal henna artists", who: "Aarohi" },
+        { t: "Book 4 certified bridal henna artists", who: "Bride" },
         { t: "Coordinate Dhol players & curated DJ playlist", who: "Friends" },
         { t: "Setup bangle stall & floral jewelry counter", who: "Sister" },
         { t: "Tasting confirmation for live chaat counters", who: "Caterer" }
@@ -337,7 +337,7 @@ const TRADITIONS = {
       tasks: [
         { t: "Prepare fresh organic ubtan with sandalwood", who: "Maternal Aunts" },
         { t: "Conduct maternal Chooda & Kalire ritual", who: "Mama Ji" },
-        { t: "Arrange yellow floral decor & yellow outfits", who: "Aarohi" }
+        { t: "Arrange yellow floral decor & yellow outfits", who: "Bride" }
       ]
     },
     {
@@ -381,7 +381,7 @@ const TRADITIONS = {
       name: "Toran & Saat Phere",
       daysBefore: 0,
       tasks: [
-        { t: "Toran touching ritual with royal sword", who: "Kabir" },
+        { t: "Toran touching ritual with royal sword", who: "Groom" },
         { t: "Jaimala garland exchange on royal stage", who: "Couple" },
         { t: "Granthi Bandhan & Sacred Fire Parikrama", who: "Pandit Ji" }
       ]
@@ -424,7 +424,7 @@ const VIP_CONCIERGE_FEATURES = [
 ];
 
 const INIT = {
-  couple: "Aarohi & Kabir",
+  couple: "Royal Wedding Celebration",
   date: "2027-02-14",
   budget: 1500000,
   theme: "Floral Pastel",
@@ -440,9 +440,9 @@ const INIT = {
       name: "Mehendi & Sangeet",
       date: "2027-02-12",
       tasks: [
-        { id: 1, t: "Book mehendi artists", who: "Aarohi", done: true },
-        { id: 2, t: "Finalise chaat & dessert menu", who: "Mom", done: false },
-        { id: 5, t: "DJ & Dhol playlist rehearsal", who: "Kabir", done: false }
+        { id: 1, t: "Book mehendi artists", who: "Bride", done: true },
+        { id: 2, t: "Finalise chaat & dessert menu", who: "Family", done: false },
+        { id: 5, t: "DJ & Dhol playlist rehearsal", who: "Groom", done: false }
       ]
     },
     {
@@ -450,8 +450,8 @@ const INIT = {
       name: "Wedding Ceremony (Saat Phere)",
       date: "2027-02-14",
       tasks: [
-        { id: 3, t: "Confirm Vedic Pandit ji for Amrit Siddhi Muhurat", who: "Kabir", done: true },
-        { id: 4, t: "Mandap 3D sketch approval with Petal & Thread", who: "Aarohi", done: false },
+        { id: 3, t: "Confirm Vedic Pandit ji for Amrit Siddhi Muhurat", who: "Groom's Side", done: true },
+        { id: 4, t: "Mandap 3D sketch approval with Petal & Thread", who: "Bride's Side", done: false },
         { id: 6, t: "Arrange Jaimala garlands & rose petal baskets", who: "Sister", done: false }
       ]
     }

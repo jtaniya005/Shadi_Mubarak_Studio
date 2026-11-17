@@ -14,43 +14,11 @@ import { days } from "./utils/helpers";
 
 const NAV_LINKS = [
   ["/", "Home", "sparkles"],
-  ["/dashboard", "Wedding Dashboard", "palace"],
+  ["/dashboard", "Dashboard", "palace"],
   ["/vendors", "Vendor Explorer", "ring"],
-  ["/planner", "Wedding Planner & Budget", "planner"],
-  ["/insights", "AI Styling & Vendor Insights", "insights"]
+  ["/planner", "Planner & Budget", "planner"],
+  ["/insights", "AI Insights", "insights"]
 ];
-
-function TopAnnouncementBar() {
-  const { set } = useStore();
-
-  const handleResetData = () => {
-    if (window.confirm("Reset all studio demo data to initial sample state?")) {
-      localStorage.removeItem("shadi_mubarak");
-      localStorage.removeItem("subh_vivah");
-      localStorage.removeItem("saptapadi");
-      set(INIT);
-      window.location.reload();
-    }
-  };
-
-  return (
-    <div className="top-announcement-bar">
-      <div className="announcement-inner">
-        <div className="announcement-left">
-          <span className="announcement-pill">LUXURY STUDIO</span>
-          <span>India's Premier Wedding Planning &amp; Vendor Coordination Platform</span>
-        </div>
-        <div className="announcement-right">
-          <span>Concierge Hotline: <strong>+91 800-SHADI-MUBARAK</strong></span>
-          <span className="sep">•</span>
-          <button className="reset-demo-btn" onClick={handleResetData} title="Reset demo data">
-            ↻ Reset Demo
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function SiteHeader({ onOpenVip }) {
   const { s } = useStore();
@@ -60,9 +28,11 @@ function SiteHeader({ onOpenVip }) {
   return (
     <header className="site-header">
       <div className="header-inner">
-        {/* Logo */}
+        {/* Brand Logo */}
         <Link to="/" className="brand-logo">
-          <Arch tone="gold" className="mini" />
+          <div className="logo-arch-wrap">
+            <Arch tone="gold" className="mini" />
+          </div>
           <div className="brand-text">
             <span className="brand-name">ShadiMubarak</span>
             <span className="brand-sub">WEDDING STUDIO</span>
@@ -82,9 +52,10 @@ function SiteHeader({ onOpenVip }) {
                 end={to === "/"}
                 className={isActive ? "active" : ""}
               >
-                <span className="nav-icon"><Icon name={iconName} size={15} /></span> {label}
+                <span className="nav-icon"><Icon name={iconName} size={15} /></span>
+                <span className="nav-label">{label}</span>
                 {isDashLink && (
-                  <span className="studio-pill-indicator">
+                  <span className="nav-days-badge">
                     {days(s.date)}d
                   </span>
                 )}
@@ -95,14 +66,14 @@ function SiteHeader({ onOpenVip }) {
 
         {/* Right Action buttons */}
         <div className="header-actions">
-          <button className="vip-header-btn" onClick={onOpenVip}>
-            <Icon name="crown" size={15} style={{ marginRight: 6 }} />
-            VIP Concierge {s.conciergeRequested && <Icon name="check" size={13} style={{ marginLeft: 4 }} />}
+          <button className="vip-action-btn" onClick={onOpenVip}>
+            <Icon name="crown" size={14} />
+            <span>VIP Concierge</span>
           </button>
           
-          <Link to="/dashboard" className={`studio-entry-btn ${isDashboardActive ? "active" : ""}`}>
-            <span>{s.couple.split(" & ")[0] || "My"} Dashboard</span>
-            <Icon name="arrowRight" size={14} style={{ marginLeft: 4 }} />
+          <Link to="/dashboard" className={`couple-profile-chip ${isDashboardActive ? "active" : ""}`} title="Open Wedding Studio">
+            <span className="couple-avatar-dot">💍</span>
+            <span className="couple-chip-name">{s.couple.split(" & ")[0] || "Studio"}</span>
           </Link>
         </div>
       </div>
@@ -111,6 +82,18 @@ function SiteHeader({ onOpenVip }) {
 }
 
 function SiteFooter({ onOpenVip }) {
+  const { set } = useStore();
+
+  const handleResetData = () => {
+    if (window.confirm("Reset all studio demo data to initial sample state?")) {
+      localStorage.removeItem("shadi_mubarak");
+      localStorage.removeItem("subh_vivah");
+      localStorage.removeItem("saptapadi");
+      set(INIT);
+      window.location.reload();
+    }
+  };
+
   return (
     <footer className="web-footer">
       <div className="footer-cols">
@@ -163,7 +146,7 @@ function SiteFooter({ onOpenVip }) {
             <li><Link to="/vendors">Jaipur &amp; Udaipur Palaces</Link></li>
             <li><Link to="/planner">Round-Table Seating Studio</Link></li>
             <li><button onClick={onOpenVip} style={{ background: "none", border: 0, padding: 0, color: "var(--gold)", cursor: "pointer", font: "inherit", fontSize: "0.88rem" }}>VIP Vivah Concierge</button></li>
-            <li><span className="muted" style={{ fontSize: "0.82rem" }}>Direct Line: +91 800-SHADI-MUBARAK</span></li>
+            <li><button onClick={handleResetData} style={{ background: "none", border: 0, padding: 0, color: "#d8c2d5", cursor: "pointer", font: "inherit", fontSize: "0.82rem", textDecoration: "underline" }}>↻ Reset Demo Data</button></li>
           </ul>
         </div>
       </div>
@@ -197,7 +180,6 @@ function ShellInner() {
 
   return (
     <div className="website-shell">
-      <TopAnnouncementBar />
       <SiteHeader onOpenVip={() => setShowVipModal(true)} />
 
       <main className="website-main">

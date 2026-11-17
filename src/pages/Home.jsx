@@ -252,27 +252,51 @@ function Home({ onOpenVip }) {
               Leave the stress of chaotic notebooks behind. Our private studio puts your wedding countdown arch, cultural ceremony timelines (Roka, Haldi, Chooda, Sangeet, Saat Phere), visual table seating studio, and itemized budget donut in one serene place.
             </p>
             <div className="studio-features-list">
-              <div><Icon name="check" size={13} color="var(--gold-soft)" style={{ marginRight: 8 }} /> Auspicious Ceremony Countdown Arch</div>
+              <div><Icon name="check" size={13} color="var(--gold-soft)" style={{ marginRight: 8 }} /> Auspicious Ceremony Timelines &amp; Muhurats</div>
               <div><Icon name="check" size={13} color="var(--gold-soft)" style={{ marginRight: 8 }} /> Cultural Tradition Ritual Packs (North Indian, Marwari, South Indian)</div>
               <div><Icon name="check" size={13} color="var(--gold-soft)" style={{ marginRight: 8 }} /> Visual Banqueting Seating Studio (Tables T1–T4)</div>
-              <div><Icon name="check" size={13} color="var(--gold-soft)" style={{ marginRight: 8 }} /> Itemized Budget Allocation & Due Accounts Tracking</div>
+              <div><Icon name="check" size={13} color="var(--gold-soft)" style={{ marginRight: 8 }} /> Itemized Budget Allocation &amp; Due Accounts Tracking</div>
               <div><Icon name="check" size={13} color="var(--gold-soft)" style={{ marginRight: 8 }} /> Private Rule-Based AI Styling Heuristics</div>
             </div>
-            <Link to="/studio" className="btn" style={{ background: "linear-gradient(135deg, var(--gold-rich), #c5861b)", color: "var(--plum-deep)", marginTop: "10px", display: "inline-flex", alignItems: "center", gap: 6 }}>
-              <span>Enter Couple Studio & Planner</span>
+            <Link to="/dashboard" className="btn" style={{ background: "linear-gradient(135deg, var(--gold-rich), #c5861b)", color: "var(--plum-deep)", marginTop: "12px", display: "inline-flex", alignItems: "center", gap: 6, fontWeight: 700 }}>
+              <span>Enter Wedding Studio &amp; Planner</span>
               <Icon name="arrowRight" size={14} />
             </Link>
           </div>
 
           <div className="studio-spotlight-preview">
-            <Arch tone="plum" className="heroarch" style={{ minHeight: "310px", margin: "0 auto", maxWidth: "270px" }}>
-              <small>{s.couple}</small>
-              <div className="big" style={{ fontSize: "4.5rem" }}>{days(s.date)}</div>
-              <p>days to auspicious union</p>
-              <div style={{ marginTop: "12px", background: "rgba(255,255,255,0.2)", padding: "4px 12px", borderRadius: "999px", fontSize: "0.8rem", fontWeight: 600 }}>
-                Theme: {s.theme}
+            <div className="studio-mini-dashboard-card">
+              <div className="mini-dash-header">
+                <span className="mini-dash-dot"></span>
+                <b>WEDDING COMMAND CENTER</b>
               </div>
-            </Arch>
+              <div className="mini-dash-body">
+                <div className="mini-dash-title">{s.couple || "Royal Wedding Celebration"}</div>
+                <div className="mini-dash-date">
+                  <span>📅 {new Date(s.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
+                  <span className="mini-dash-days">{days(s.date)} days away</span>
+                </div>
+                <div className="mini-dash-stats">
+                  <div className="mini-stat-item">
+                    <small>Destination</small>
+                    <b>{s.city || "Jaipur"}</b>
+                  </div>
+                  <div className="mini-stat-item">
+                    <small>Theme</small>
+                    <b>{s.theme}</b>
+                  </div>
+                  <div className="mini-stat-item">
+                    <small>Budget Status</small>
+                    <b>{inr(s.budget)}</b>
+                  </div>
+                </div>
+                <div className="mini-dash-modules">
+                  <span>✓ 5 Ceremony Timelines</span>
+                  <span>✓ Seating Tables T1–T4</span>
+                  <span>✓ VIP Concierge</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
